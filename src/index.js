@@ -19,9 +19,9 @@ app.use(morgan("combined"))
 app.use(express.json())
 
 //IMPORTAR RUTAS
-app.use(require("./components/routes/rutasUsuarios"))
-app.use(require("./components/routes/rutasTareas"))
-app.use(require("./components/routes/authRutas"))
+app.use(require("./routes/users.routes"))
+app.use(require("./routes/tasks.routes"))
+app.use(require("./routes/auth.routes"))
 
 
 

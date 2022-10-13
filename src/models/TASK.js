@@ -12,7 +12,7 @@ const TaskSchema = new Schema({
         min: 8,
         require
     },
-    estado: {
+    state: {
         type: Schema.Types.String,
         min: 8,
         require
