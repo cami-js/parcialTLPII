@@ -19,7 +19,7 @@ CtrlUser.getUser = async(req, res)=>{
         }
     
         res.status(200).json({
-            msg: "Usuario encontrado",
+            msg: "Usuarios encontrados",
             user
     
         })

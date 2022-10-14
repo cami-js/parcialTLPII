@@ -83,7 +83,7 @@ CtrlTask.postTask = async(req, res)=>{
 //PUT
 CtrlTask.putTask =async(req,res)=>{
 try {
-    const idTarea=req.params.idTarea
+    const idTarea=req.params.idTask
     const idUser=req.user._id
 const{title,description,state}=req.body
 if(!idUser||!title||!description||!state){
@@ -108,7 +108,8 @@ res.status(200).json({
 
 catch (error) {
     res.status(400).json({
-        msg:"Error"
+        msg:"Error",
+        error:error.message
     })
 }
 }
@@ -117,7 +118,7 @@ catch (error) {
 CtrlTask.deleteTask = async(req,res)=>{
 try {
     const idUser=req.user._id
-    const idTarea=req.params.idTarea
+    const idTarea=req.params.idTask
     const tareas= await Tareas.findOne({$and:[{_id:idTarea},{isActive:true}]})
 
 if (!tareas || !tareas.isActive){

@@ -9,7 +9,6 @@ const validarJWT = require("../middlewares/validarJWT")
 router.post("/user",postUser)
 router.get("/user",[validarJWT],getUser)
 router.get("/user/:idUser",getUserId)
-router.post("/user",[validarJWT],postUser)
 router.put("/user/:idUser",[validarJWT],putUser)
 
 router.delete("/user",[],deleteUser)

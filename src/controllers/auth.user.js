@@ -25,17 +25,20 @@ if (!validPassword){
         msg:"Error de autenticación. Contraseña incorrecta"
     })
 }
-console.log(user._id)
+
+
 //GENERAR EL TOKEN
 const token = await generarJWT({uid:user._id})
 
-return res.state(200).json({
+
+return res.status(200).json({
     token
 })
 
 } catch (error) {
     return res.json({
-        message:"Error al iniciar sesion"
+        message:"Error al iniciar sesion",
+        error:error.message
     })
 }
 
